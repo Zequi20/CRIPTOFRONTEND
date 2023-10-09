@@ -64,7 +64,7 @@ class ResponsiveAppBar extends Component {
                 textDecoration: 'none',
               }}
             >
-              Criptomendas
+              CRIPTOMONEDAS
             </Typography>
 
             <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -120,7 +120,7 @@ class ResponsiveAppBar extends Component {
                 textDecoration: 'none',
               }}
             >
-              LOGO
+              CRIPTOMONEDAS
             </Typography>
             <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
               {pages.map((page) => (
