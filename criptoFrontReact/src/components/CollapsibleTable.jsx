@@ -13,6 +13,7 @@ import Typography from '@mui/material/Typography';
 import Paper from '@mui/material/Paper';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+import BasicLineChart from './BasicLineChart.jsx';
 
 function createData(name, symbol, price, market_cap, volume,) {
     return {
@@ -21,18 +22,7 @@ function createData(name, symbol, price, market_cap, volume,) {
         price,
         market_cap,
         volume,
-        history: [
-            {
-                date: '2020-01-05',
-                customerId: 'hola rey',
-               
-            },
-            {
-                date: '2020-01-02',
-                customerId: 'Anonymous',
-                
-            },
-        ],
+        
     };
 }
 
@@ -75,28 +65,9 @@ class Row extends Component {
                         <Collapse in={this.state.open} timeout="auto" unmountOnExit>
                             <Box sx={{ margin: 1 }}>
                                 <Typography variant="h6" gutterBottom component="div">
-                                    DETALLES
+                                    Historico de Precios
                                 </Typography>
-                                <Table size="small" aria-label="details">
-                                    <TableHead>
-                                        <TableRow>
-                                            <TableCell>Date</TableCell>
-                                            <TableCell>Customer</TableCell>
-
-                                        </TableRow>
-                                    </TableHead>
-                                    <TableBody>
-                                        {row.history.map((historyRow) => (
-                                            <TableRow key={historyRow.date}>
-                                                <TableCell component="th" scope="row">
-                                                    {historyRow.date}
-                                                </TableCell>
-                                                <TableCell>{historyRow.customerId}</TableCell>
-
-                                            </TableRow>
-                                        ))}
-                                    </TableBody>
-                                </Table>
+                                <BasicLineChart simbolo={row.symbol}/>
                             </Box>
                         </Collapse>
                     </TableCell>
@@ -111,12 +82,7 @@ Row.propTypes = {
         name: PropTypes.string.isRequired ,
         symbol: PropTypes.string.isRequired,
         price: PropTypes.number.isRequired,
-        history: PropTypes.arrayOf(
-            PropTypes.shape({
-                customerId: PropTypes.string.isRequired,
-                date: PropTypes.string.isRequired,
-            }),
-        ).isRequired,
+        
         market_cap: PropTypes.number.isRequired,
         volume: PropTypes.number.isRequired,
         
