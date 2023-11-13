@@ -3,9 +3,8 @@ import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
-//import MenuIcon from '@mui/icons-material/Menu';
-import SearchIcon from '@mui/icons-material/Search';
 import MoreIcon from '@mui/icons-material/MoreVert';
+import FavoriteIcon from '@mui/icons-material/Favorite';
 import DrawerComponent from './CustomDrawer.jsx';
 
 const pages = ['Inicio', 'Alertas', 'Historial'];
@@ -29,7 +28,7 @@ class BottomAppBar extends Component {
           <DrawerComponent/>
           <Box sx={{ flexGrow: 1 }} />
           <IconButton color="inherit">
-            <SearchIcon />
+            <FavoriteIcon />
           </IconButton>
           <IconButton color="inherit">
             <MoreIcon />

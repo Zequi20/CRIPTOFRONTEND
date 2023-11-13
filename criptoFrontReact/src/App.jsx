@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import BottomAppBar from './components/BottomAppBar.jsx'
 import CollapsibleTable from './components/CollapsibleTable.jsx';
-
+import Typography from '@mui/material/Typography';
 import axios from 'axios';
 
 
@@ -29,7 +29,7 @@ class App extends Component {
   render() {
     return (
       <div className='App'>
-        
+        <Typography variant="h3">CoinWatch</Typography>
           <CollapsibleTable items={this.state.items} />
           <BottomAppBar/>
         

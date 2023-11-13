@@ -20,13 +20,13 @@ const theme = createTheme({
        // Cambia este color según tus preferencias
       contrastText: '#000000',
     },
-    components: {
-      MuiDrawer: {
-        paper: {
-          backgroundColor: '#344955',  // Cambia esto al color que desees
-          color: '#ffffff',           // Cambia esto al color de texto que desees
-        },
+    typography: {
+      fontFamily: 'Work Sans, sans-serif', // Establece la fuente principal
+      h1: {
+        fontSize: 24, // Personaliza el tamaño para h1
+        fontWeight: 1000, // Personaliza el peso de la fuente para h1
       },
+      // Añade más estilos para otras variantes de tipografía según sea necesario
     },
   },
 });
