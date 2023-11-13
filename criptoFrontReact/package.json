@@ -16,6 +16,7 @@
     "@mui/material": "^5.14.12",
     "@mui/styled-engine": "npm:@mui/styled-engine-sc@latest",
     "axios": "^1.5.1",
+    "numeral": "^2.0.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "recharts": "^2.9.3"

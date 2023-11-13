@@ -7,23 +7,12 @@ import MoreIcon from '@mui/icons-material/MoreVert';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import DrawerComponent from './CustomDrawer.jsx';
 
-
 class BottomAppBar extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      anchorElNav: null,
-      anchorElUser: null,
-    };
-  }
-
-
   render() {
-
     return (
       <AppBar position="fixed" color="primary" sx={{ top: 'auto', bottom: 0 }}>
         <Toolbar>
-          <DrawerComponent/>
+          <DrawerComponent />
           <Box sx={{ flexGrow: 1 }} />
           <IconButton color="inherit">
             <FavoriteIcon />
