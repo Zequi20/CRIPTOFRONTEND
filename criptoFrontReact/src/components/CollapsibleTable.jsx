@@ -67,7 +67,7 @@ class Row extends Component {
                                 <Typography variant="h6" gutterBottom component="div">
                                     Historico de Precios
                                 </Typography>
-                                <BasicLineChart simbolo={row.symbol}/>
+                                
                             </Box>
                         </Collapse>
                     </TableCell>
