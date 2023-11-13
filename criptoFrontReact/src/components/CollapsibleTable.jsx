@@ -13,7 +13,8 @@ import Typography from '@mui/material/Typography';
 import Paper from '@mui/material/Paper';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
-import BasicLineChart from './BasicLineChart.jsx';
+import CustomBarChart from './BasicLineChart.jsx';
+import Card from '@mui/material/Card';
 
 function createData(name, symbol, price, market_cap, volume,) {
     return {
@@ -22,7 +23,7 @@ function createData(name, symbol, price, market_cap, volume,) {
         price,
         market_cap,
         volume,
-        
+
     };
 }
 
@@ -63,12 +64,15 @@ class Row extends Component {
                 <TableRow>
                     <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
                         <Collapse in={this.state.open} timeout="auto" unmountOnExit>
-                            <Box sx={{ margin: 1 }}>
-                                <Typography variant="h6" gutterBottom component="div">
-                                    Historico de Precios
-                                </Typography>
-                                
-                            </Box>
+                            <Card>
+                                <Box sx={{ margin: 1 }}>
+                                    <Typography variant="h6" gutterBottom component="div">
+                                        Historico de Precios
+                                    </Typography>
+                                    <CustomBarChart simbolo="BTC"/>
+                                </Box>
+                            </Card>
+
                         </Collapse>
                     </TableCell>
                 </TableRow>
@@ -79,13 +83,13 @@ class Row extends Component {
 
 Row.propTypes = {
     row: PropTypes.shape({
-        name: PropTypes.string.isRequired ,
+        name: PropTypes.string.isRequired,
         symbol: PropTypes.string.isRequired,
         price: PropTypes.number.isRequired,
-        
+
         market_cap: PropTypes.number.isRequired,
         volume: PropTypes.number.isRequired,
-        
+
     }).isRequired,
 };
 
