@@ -15,6 +15,15 @@ const CustomTooltip = ({ active, payload, label }) => {
   return null;
 };
 
+CustomTooltip.propTypes = {
+  active: PropTypes.bool, // Debería ser un booleano
+  payload: PropTypes.arrayOf(
+    PropTypes.shape({
+      value: PropTypes.number, // Debería ser un número
+    })
+  ),
+  label: PropTypes.string, // Debería ser una cadena de texto
+};
 class CustomAreaChart extends Component {
   state = {
     axisVertical: [],
