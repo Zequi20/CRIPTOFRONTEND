@@ -7,8 +7,6 @@ import MoreIcon from '@mui/icons-material/MoreVert';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import DrawerComponent from './CustomDrawer.jsx';
 
-const pages = ['Inicio', 'Alertas', 'Historial'];
-const settings = ['Perfil', 'Cuenta', 'Configuracion', 'Cerrar Sesion'];
 
 class BottomAppBar extends Component {
   constructor(props) {

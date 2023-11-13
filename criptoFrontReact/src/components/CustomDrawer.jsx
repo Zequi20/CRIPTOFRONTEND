@@ -28,7 +28,7 @@ class CustomDrawer extends Component {
     super(props);
     this.state = {
       open: false,
-      selectedMenuItem: '', // Agrega un estado para el elemento seleccionado
+      selectedMenuItem: 'Inicio', // Agrega un estado para el elemento seleccionado
     };
   }
 

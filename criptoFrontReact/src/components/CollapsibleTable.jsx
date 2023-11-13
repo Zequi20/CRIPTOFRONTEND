@@ -13,7 +13,7 @@ import Typography from '@mui/material/Typography';
 import Paper from '@mui/material/Paper';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
-import CustomBarChart from './BasicLineChart.jsx';
+import CustomAreaChart from './BasicLineChart.jsx';
 import Card from '@mui/material/Card';
 
 function createData(name, symbol, price, market_cap, volume,) {
@@ -69,7 +69,7 @@ class Row extends Component {
                                     <Typography variant="h6" gutterBottom component="div">
                                         Historico de Precios
                                     </Typography>
-                                    <CustomBarChart simbolo="BTC"/>
+                                    <CustomAreaChart simbolo={row.symbol}/>
                                 </Box>
                             </Card>
 
