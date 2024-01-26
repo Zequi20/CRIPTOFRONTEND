@@ -15,6 +15,15 @@ class UsuarioServicio {
     }
   }
   
+  async registrarUsuario(credenciales) {
+    try {
+      const response = await this.axios.post('http://127.0.0.1:5000/register', credenciales );
+      return response;
+    } catch (error) {
+      console.error('Error al registrar el usuario:', error);
+      return null;
+    }
+  }
 
 }
 
