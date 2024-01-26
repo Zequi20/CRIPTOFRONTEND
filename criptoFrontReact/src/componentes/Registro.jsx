@@ -24,16 +24,16 @@ function Registro() {
         };
         const respuesta = await servicioUsusario.registrarUsuario(credenciales);
         if(respuesta.status === 200){
-            navegar('');
+            navegar('/');
         }
     };
 
     return (
-        <div style={{ marginTop: theme.spacing(8), display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+        <div style={{margin: '0 auto', marginTop: theme.spacing(8), display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             <Typography component="h1" variant="h5">
                 Registrarse
             </Typography>
-            <form style={{ width: '100%', marginTop: theme.spacing(1) }}>
+            <form style={{ width: '85%', marginTop: theme.spacing(1) }}>
                 <Grid container spacing={2}>
                     <Grid item xs={12}>
                         <TextField

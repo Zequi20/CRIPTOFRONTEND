@@ -8,6 +8,7 @@ class UsuarioServicio {
   async loguearUsuario(credenciales) {
     try {
       const response = await this.axios.post('http://127.0.0.1:5000/login', credenciales );
+      
       return response.data;
     } catch (error) {
       console.error('Error al obtener el usuario:', error);
@@ -18,10 +19,11 @@ class UsuarioServicio {
   async registrarUsuario(credenciales) {
     try {
       const response = await this.axios.post('http://127.0.0.1:5000/register', credenciales );
+      console.log(response.data);
       return response;
     } catch (error) {
       console.error('Error al registrar el usuario:', error);
-      return null;
+      return response;
     }
   }
 

@@ -1,5 +1,6 @@
 import './App.css'
 import Login from './componentes/Login'
+import Registro from './componentes/Registro'
 import Tabla from './componentes/Tabla'
 import ProtectedRoute from './utils/ProtectedRoute'
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
@@ -13,6 +14,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path='' element={ <Login/>} />
+        <Route path='registro' element={ <Registro/>} />
         <Route element={ <ProtectedRoute canActivate={user}/>}>
           <Route path='tabla' element={<Tabla/>}/>
         </Route>

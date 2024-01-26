@@ -33,12 +33,16 @@ function Login() {
         }
     };
 
+    const onClickReg = async () => {
+        navegar('/registro');
+    };
+
     return (
-        <div style={{ marginTop: theme.spacing(8), display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+        <div style={{margin: '0 auto', marginTop: theme.spacing(8), display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             <Typography component="h1" variant="h5">
                 Iniciar sesión
             </Typography>
-            <form style={{ width: '100%', marginTop: theme.spacing(1) }}>
+            <form style={{ width: '85%', marginTop: theme.spacing(1) }}>
                 <Grid container spacing={2}>
                     <Grid item xs={12}>
                         <TextField
@@ -69,7 +73,14 @@ function Login() {
                 fullWidth
                 onClick={onClickLogin}
                 style={{ marginTop: theme.spacing(3) }}>
-                    Login
+                    Inciar Sesion
+                </Button>
+                <Button variant="text"
+                type="button"
+                fullWidth
+                onClick={onClickReg}
+                style={{ marginTop: theme.spacing(3) }}>
+                    No tienes una cuenta? Registrate
                 </Button>
             </form>
         </div>
