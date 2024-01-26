@@ -1,7 +1,7 @@
 import './App.css'
-import Login from './componentes/Login'
-import Registro from './componentes/Registro'
-import Tabla from './componentes/Tabla'
+import Login from './componentes/pages/Login'
+import Registro from './componentes/pages/Registro'
+import Tabla from './componentes/pages/Tabla'
 import ProtectedRoute from './utils/ProtectedRoute'
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import {useLocalStorage} from 'react-use';

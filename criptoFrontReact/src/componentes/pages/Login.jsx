@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import UsuarioServicio from "../servicios/usuario_servicio";
+import UsuarioServicio from "../../servicios/usuario_servicio";
 import { useNavigate } from "react-router-dom";
 import { Button, Grid, TextField, Typography } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 
-function Registro() {
+function Login() {
     const theme = useTheme();
     const [nombre, setNombre] = useState("");
     const [clave, setClave] = useState("");
@@ -13,25 +13,34 @@ function Registro() {
     const handleNombre = (event) => {
         setNombre(event.target.value);
     };
+
     const handleClave = (event) => {
         setClave(event.target.value);
     };
 
-    const onClickRegister = async () => {
+    const onClickLogin = async () => {
         const credenciales = {
             "nombre": nombre,
             "clave": clave,
         };
-        const respuesta = await servicioUsusario.registrarUsuario(credenciales);
-        if(respuesta.status === 200){
-            navegar('/');
+        const respuesta = await servicioUsusario.loguearUsuario(credenciales)
+        if (respuesta["success"]) {
+            console.log("login exitoso");
+            localStorage.setItem("user", JSON.stringify(credenciales));
+            navegar('/tabla');
+        } else {
+            console.log("login fallido");
         }
+    };
+
+    const onClickReg = async () => {
+        navegar('/registro');
     };
 
     return (
         <div style={{margin: '0 auto', marginTop: theme.spacing(8), display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             <Typography component="h1" variant="h5">
-                Registrarse
+                Iniciar sesión
             </Typography>
             <form style={{ width: '85%', marginTop: theme.spacing(1) }}>
                 <Grid container spacing={2}>
@@ -62,13 +71,20 @@ function Registro() {
                 <Button variant="contained"
                 type="button"
                 fullWidth
-                onClick={onClickRegister}
+                onClick={onClickLogin}
                 style={{ marginTop: theme.spacing(3) }}>
-                    Registrarse
+                    Inciar Sesion
+                </Button>
+                <Button variant="text"
+                type="button"
+                fullWidth
+                onClick={onClickReg}
+                style={{ marginTop: theme.spacing(3) }}>
+                    No tienes una cuenta? Registrate
                 </Button>
             </form>
         </div>
     );
 }
 
-export default Registro;
+export default Login;
