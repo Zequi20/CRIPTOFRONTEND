@@ -1,39 +1,24 @@
-import React, { Component } from 'react';
-import BottomAppBar from './components/BottomAppBar.jsx';
-import CollapsibleTable from './components/CollapsibleTable.jsx';
-import axios from 'axios';
+import './App.css'
+import Login from './componentes/Login'
+import Tabla from './componentes/Tabla'
+import ProtectedRoute from './utils/ProtectedRoute'
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import {useLocalStorage} from 'react-use';
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      items: [],
-    };
-  }
+function App() {
 
-  componentDidMount() {
-    this.fetchTopMonedas();
-  }
+  const [user] = useLocalStorage("user");
 
-  fetchTopMonedas = () => {
-    axios
-      .get('http://127.0.0.1:5000/top_monedas')
-      .then(response => {
-        this.setState({ items: response.data });
-      })
-      .catch(error => {
-        console.error(error);
-      });
-  };
-
-  render() {
-    return (
-      <div className='App'>
-        <CollapsibleTable items={this.state.items} />
-        <BottomAppBar />
-      </div>
-    );
-  }
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path='' element={ <Login/>} />
+        <Route element={ <ProtectedRoute canActivate={user}/>}>
+          <Route path='tabla' element={<Tabla/>}/>
+        </Route>
+      </Routes>   
+    </BrowserRouter>
+  )
 }
 
-export default App;
+export default App
