@@ -8,33 +8,56 @@ import HistoryIcon from '@mui/icons-material/History';
 import WarningIcon from '@mui/icons-material/Warning';
 import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
 import LogoutIcon from '@mui/icons-material/Logout';
+import MonetizationOnIcon from '@mui/icons-material/MonetizationOn';
+import { useNavigate } from "react-router-dom";
+import Typography from '@mui/material/Typography';
 
 function DrawerList() {
     const tema = useTheme();
+    const navegar = useNavigate();
+    const onSalirClick = () => {
+        navegar('/');
+    };
+    const onInicioClick = () => {
+        navegar('/tabla');
+    };
+    const onHistorialClick = () => {
+        navegar('/historial');
+    };
+    const onAlertasClick = () => {
+        navegar('/alertas');
+    };
+    const onUsuariosClick = () => {
+        navegar('/usuarios');
+    };
     return (
         <Box style={{ backgroundColor: tema.palette.primary.main, color: 'white', width: 250, height: '100vh' }}>
-            
             <nav>
+                {/* <MonetizationOnIcon style={{ fontSize: 30, marginRight: 8, marginTop: 8 }} /> */}
+                <Typography variant="h6" component="div" display="flex" alignItems="center">
+                    <MonetizationOnIcon style={{ margin: '8px' }} />
+                    CryptoApp
+                </Typography>
                 <List>
-                    <ListItem>
-                        <ListItemIcon> <HomeIcon style={{ color: 'white' }}/> </ListItemIcon>
+                    <ListItem onClick={onInicioClick}>
+                        <ListItemIcon> <HomeIcon style={{ color: 'white' }} /> </ListItemIcon>
                         <ListItemText primary="Inicio" />
                     </ListItem>
-                    <ListItem>
-                    <ListItemIcon> <HistoryIcon style={{ color: 'white' }}/> </ListItemIcon>
+                    <ListItem onClick={onHistorialClick}>
+                        <ListItemIcon> <HistoryIcon style={{ color: 'white' }} /> </ListItemIcon>
                         <ListItemText primary="Historial" />
                     </ListItem>
-                    <ListItem>
-                    <ListItemIcon> <WarningIcon style={{ color: 'white' }}/> </ListItemIcon>
+                    <ListItem onClick={onAlertasClick}>
+                        <ListItemIcon> <WarningIcon style={{ color: 'white' }} /> </ListItemIcon>
                         <ListItemText primary="Alertas" />
                     </ListItem>
-                    <ListItem>
-                    <ListItemIcon> <ManageAccountsIcon style={{ color: 'white' }}/> </ListItemIcon>
+                    <ListItem onClick={onUsuariosClick}>
+                        <ListItemIcon> <ManageAccountsIcon style={{ color: 'white' }} /> </ListItemIcon>
                         <ListItemText primary="Usuario" />
                     </ListItem>
-                    <ListItem>
-                    <ListItemIcon> <LogoutIcon style={{ color: 'white' }}/> </ListItemIcon>
-                        <ListItemText primary="Salir" />
+                    <ListItem onClick={onSalirClick}>
+                        <ListItemIcon> <LogoutIcon style={{ color: 'white' }} /> </ListItemIcon>
+                        <ListItemText primary="Cerrar Sesion" />
                     </ListItem>
                 </List>
             </nav>

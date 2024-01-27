@@ -4,7 +4,7 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import AddIcon from '@mui/icons-material/Add';
-import SearchIcon from '@mui/icons-material/Search';
+import InfoIcon from '@mui/icons-material/Info';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import { styled } from '@mui/material/styles';
 import Fab from '@mui/material/Fab';
@@ -42,7 +42,7 @@ function BottomAppBar() {
                 </StyledFab>
                 <Box sx={{ flexGrow: 1 }} />
                 <IconButton color="inherit">
-                    <SearchIcon />
+                    <InfoIcon/>
                 </IconButton>
                 <IconButton color="inherit">
                     <MoreIcon />
