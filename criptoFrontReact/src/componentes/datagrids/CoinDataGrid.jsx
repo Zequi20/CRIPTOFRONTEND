@@ -35,7 +35,11 @@ function CoinDataGrid() {
     };
 
     fetchData();
-  }, []); // El array de dependencias vacío significa que se ejecutará solo después del montaje
+    const intervalId = setInterval(() => {
+      fetchData();
+    }, 6000);
+    return () => clearInterval(intervalId);
+  }, []);
 
   return (
     <div style={{ height: 400, width: '100%' }}>
