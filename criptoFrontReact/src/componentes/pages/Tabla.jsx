@@ -2,7 +2,7 @@ import React from "react";
 import BottomAppBar from "../BottomAppBar";
 import { Typography } from "@mui/material";
 import CoinDataGrid from "../datagrids/CoinDataGrid";
-import CustomAreaChart from "../charts/CustomAreaChart";
+import SelectLineChart from "../charts/SelectLineChart";
 
 function Tabla(){
     return (
@@ -11,7 +11,7 @@ function Tabla(){
             Top 5 Monedas
         </Typography>
         <CoinDataGrid/>
-        <CustomAreaChart/>
+        <SelectLineChart/>
         <br />
         <br/>
         <BottomAppBar/>

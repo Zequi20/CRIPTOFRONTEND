@@ -29,9 +29,7 @@ const CoinDataGrid = () => {
     };
 
     fetchData();
-    const intervalId = setInterval(()=> {
-        fetchData();
-    }, 6000);
+    const intervalId = setInterval(fetchData, 6000);
     return () => clearInterval(intervalId);
   }, []);
 
