@@ -11,7 +11,6 @@ import Fab from '@mui/material/Fab';
 import MenuIcon from '@mui/icons-material/Menu';
 import CustomDrawer from "./CustomDrawer";
 
-
 function BottomAppBar() {
 
     const [drawerOpen, setDrawerOpen] = useState(false);
@@ -35,7 +34,7 @@ function BottomAppBar() {
         <AppBar position="fixed" color="primary" sx={{ top: 'auto', bottom: 0 }}>
             <Toolbar>
                 <IconButton edge="start" color="inherit" onClick={handleDrawerOpen}>
-                    <MenuIcon />
+                    <MenuIcon/>
                 </IconButton>
                 <StyledFab color="secondary" aria-label="add">
                     <AddIcon />

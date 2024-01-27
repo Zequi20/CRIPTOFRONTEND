@@ -1,39 +1,17 @@
 import React from "react";
 import BottomAppBar from "../BottomAppBar";
+import { Typography } from "@mui/material";
+import CoinDataGrid from "../datagrids/CoinDataGrid";
 
 function Tabla(){
     return (
     <>
-        <h1>
-        Tabla de datos visible solamente a usuario logueado
-        </h1>
-        <h1>
-        Tabla de datos visible solamente a usuario logueado
-        </h1><h1>
-        Tabla de datos visible solamente a usuario logueado
-        </h1><h1>
-        Tabla de datos visible solamente a usuario logueado
-        </h1><h1>
-        Tabla de datos visible solamente a usuario logueado
-        </h1><h1>
-        Tabla de datos visible solamente a usuario logueado
-        </h1><h1>
-        Tabla de datos visible solamente a usuario logueado
-        </h1><h1>
-        Tabla de datos visible solamente a usuario logueado
-        </h1><h1>
-        Tabla de datos visible solamente a usuario logueado
-        </h1><h1>
-        Tabla de datos visible solamente a usuario logueado
-        </h1><h1>
-        Tabla de datos visible solamente a usuario logueado
-        </h1><h1>
-        Tabla de datos visible solamente a usuario logueado
-        </h1><h1>
-        Tabla de datos visible solamente a usuario logueado
-        </h1>
+        <Typography variant="h4" style={{margin: '8px'}}>
+            Top 5 Monedas
+        </Typography>
+        
+        <CoinDataGrid/>
         <BottomAppBar/>
-       
     </>
     );
    
