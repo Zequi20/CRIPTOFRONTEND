@@ -20,10 +20,8 @@ export default function UserCard() {
   };
 
   useEffect(() => {
-    // Obtén los datos del usuario desde el Local Storage
     const userData = JSON.parse(localStorage.getItem('user'));
 
-    // Verifica si hay datos y actualiza el estado
     if (userData) {
       setUserName(userData.nombre);
       if(verClave){
@@ -32,7 +30,7 @@ export default function UserCard() {
         setUserPass(userData.clave.replace(/./g, '*'));
       }
     }
-  }, [verClave]); // La dependencia del efecto es un array vacío para ejecutarlo solo una vez al montar el componente
+  }, [verClave]);
 
   return (
     <Box sx={{ minWidth: 275 }}>

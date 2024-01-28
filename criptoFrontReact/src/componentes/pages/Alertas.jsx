@@ -1,41 +1,19 @@
 import React from "react";
 import BottomAppBar from "../BottomAppBar";
+import AlertList from "../AlertList";
+import { Typography } from "@mui/material";
 
-function Alertas(){
+function Alertas() {
     return (
-    <>
-        <h1>
-        Alertas de datos visible solamente a usuario logueado
-        </h1>
-        <h1>
-        Alertas de datos visible solamente a usuario logueado
-        </h1><h1>
-        Alertas de datos visible solamente a usuario logueado
-        </h1><h1>
-        Alertas de datos visible solamente a usuario logueado
-        </h1><h1>
-        Alertas de datos visible solamente a usuario logueado
-        </h1><h1>
-        Alertas de datos visible solamente a usuario logueado
-        </h1><h1>
-        Alertas de datos visible solamente a usuario logueado
-        </h1><h1>
-        Alertas de datos visible solamente a usuario logueado
-        </h1><h1>
-        Alertas de datos visible solamente a usuario logueado
-        </h1><h1>
-        Alertas de datos visible solamente a usuario logueado
-        </h1><h1>
-        Alertas de datos visible solamente a usuario logueado
-        </h1><h1>
-        Alertas de datos visible solamente a usuario logueado
-        </h1><h1>
-        Alertas de datos visible solamente a usuario logueado
-        </h1>
-        <BottomAppBar/>
-    </>
+        <>
+            <Typography variant="h3" component="div" display="flex" alignItems="center">
+                Alertas del Carajo
+            </Typography>
+            <AlertList></AlertList>
+            <BottomAppBar />
+        </>
     );
-   
+
 }
 
 export default Alertas;
