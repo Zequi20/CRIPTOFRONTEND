@@ -22,6 +22,7 @@ function Tabla() {
                 <SelectLineChart />
                 <br />
                 <br />
+                <br />
                 <BottomAppBar />
             </CustomPaper>
 
