@@ -26,7 +26,11 @@ function Login() {
         const respuesta = await servicioUsusario.loguearUsuario(credenciales)
         if (respuesta["success"]) {
             console.log("login exitoso");
-            localStorage.setItem("user", JSON.stringify(credenciales));
+            localStorage.setItem("user", JSON.stringify({
+                "nombre" : nombre,
+                "clave": clave,
+                "id": respuesta["id"]
+            }));
             navegar('/tabla');
         } else {
             console.log("login fallido");

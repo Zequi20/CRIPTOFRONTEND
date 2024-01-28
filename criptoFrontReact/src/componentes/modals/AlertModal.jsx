@@ -5,9 +5,10 @@ import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import CloseIcon from '@mui/icons-material/Close';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import Slide from '@mui/material/Slide';
 import AlertList from '../AlertList';
+import AddAlertButton from '../AddAlertButton';
 
 
 const Transition = forwardRef(function Transition(props, ref) {
@@ -47,11 +48,12 @@ const AlertModal = React.forwardRef(({ children }, ref) => {
               onClick={handleClose}
               aria-label="close"
             >
-              <CloseIcon />
+              <ArrowBackIcon />
             </IconButton>
             <Typography sx={{ ml: 2, flex: 1 }} variant="h6" component="div">
               Alertas
             </Typography>
+            <AddAlertButton/>
             <Button autoFocus color="inherit" onClick={handleClose}>
               Listo
             </Button>
