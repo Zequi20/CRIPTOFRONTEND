@@ -34,7 +34,7 @@ function DrawerList() {
         <Box style={{ backgroundColor: tema.palette.primary.main, color: 'white', width: 250, height: '100vh' }}>
             <nav>
                 {/* <MonetizationOnIcon style={{ fontSize: 30, marginRight: 8, marginTop: 8 }} /> */}
-                <Typography variant="h6" component="div" display="flex" alignItems="center">
+                <Typography color="secondary" variant="h6" component="div" display="flex" alignItems="center">
                     <MonetizationOnIcon style={{ margin: '8px' }} />
                     CryptoApp
                 </Typography>

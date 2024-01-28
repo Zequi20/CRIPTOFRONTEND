@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { LineChart } from '@mui/x-charts/LineChart';
 import { useTheme } from '@mui/system';
+import { YAxis } from 'recharts';
 
 export default function CustomAreaChart({ prices }) {
   const [precios, setPrecios] = useState([]);
@@ -23,7 +24,8 @@ export default function CustomAreaChart({ prices }) {
       ) : (
         <LineChart
         colors={[theme.palette.primary.main, theme.palette.secondary.main]}
-          xAxis={[{ data: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11] }]}
+          xAxis={[{ data: Array.from({ length: 30 }, (_, index) => index + 1), label: "Dias atras", scaleType: "linear" }]}
+          
           series={[
             {
               data: precios, // Usa la array 'precios' obtenida de la prop 'prices'

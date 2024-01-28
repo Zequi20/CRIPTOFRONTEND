@@ -9,7 +9,7 @@ function SelectLineChart() {
 
   const [listaSimbolos, setListSimbolos] = useState([]);
   const [dataHistorial, setDataHistorial] = useState([]);
-  const [selectedCurrency, setSelectedCurrency] = useState('');
+  const [selectedCurrency, setSelectedCurrency] = useState('BTC');
 
   const handleCurrencyChange = (selectedValue) => {
     setSelectedCurrency(selectedValue);
@@ -48,6 +48,8 @@ function SelectLineChart() {
   return (
     <>
       <CustomSelect options={listaSimbolos} onSelectionChange={handleCurrencyChange} />
+      <br />
+      <Typography variant="string">Precio (USD)</Typography>
       <CustomAreaChart prices={dataHistorial} />
     </>
   );

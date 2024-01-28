@@ -26,7 +26,7 @@ export default function CustomSelect({ options, onSelectionChange }) {
 
     return (
         <Box sx={{ minWidth: 120 }}>
-            <FormControl fullWidth>
+            <FormControl id="perro" fullWidth>
                 <InputLabel id="custom-select-label">Moneda</InputLabel>
                 <Select
                     labelId="custom-select-label"
