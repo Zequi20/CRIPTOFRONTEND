@@ -1,5 +1,5 @@
 import React from "react";
-import BottomAppBar from "../BottomAppBar";
+import BottomAppBar from "../navigation/BottomAppBar";
 
 function Historial(){
     return (

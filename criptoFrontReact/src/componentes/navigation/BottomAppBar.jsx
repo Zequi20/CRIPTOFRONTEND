@@ -1,4 +1,4 @@
-import {React, useState} from 'react';
+import { React, useState } from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -9,7 +9,9 @@ import MoreIcon from '@mui/icons-material/MoreVert';
 import { styled } from '@mui/material/styles';
 import Fab from '@mui/material/Fab';
 import MenuIcon from '@mui/icons-material/Menu';
-import CustomDrawer from "./CustomDrawer";
+import CustomDrawer from "../CustomDrawer";
+import AlertModal from '../modals/AlertModal';
+import CenterFab from '../CenterFab';
 
 function BottomAppBar() {
 
@@ -34,14 +36,15 @@ function BottomAppBar() {
         <AppBar position="fixed" color="primary" sx={{ top: 'auto', bottom: 0 }}>
             <Toolbar>
                 <IconButton edge="start" color="inherit" onClick={handleDrawerOpen}>
-                    <MenuIcon/>
+                    <MenuIcon />
                 </IconButton>
-                <StyledFab color="secondary" aria-label="add">
-                    <AddIcon />
-                </StyledFab>
+                <AlertModal>
+                <CenterFab/>
+                </AlertModal>
+
                 <Box sx={{ flexGrow: 1 }} />
                 <IconButton color="inherit">
-                    <InfoIcon/>
+                    <InfoIcon />
                 </IconButton>
                 <IconButton color="inherit">
                     <MoreIcon />

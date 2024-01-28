@@ -1,4 +1,4 @@
-import { Box, ListItemIcon } from "@mui/material";
+import { Box, ListItemButton, ListItemIcon } from "@mui/material";
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
@@ -33,32 +33,32 @@ function DrawerList() {
     return (
         <Box style={{ backgroundColor: tema.palette.primary.main, color: 'white', width: 250, height: '100vh' }}>
             <nav>
-                {/* <MonetizationOnIcon style={{ fontSize: 30, marginRight: 8, marginTop: 8 }} /> */}
-                <Typography color="secondary" variant="h6" component="div" display="flex" alignItems="center">
+                
+                <Typography style={{ marginTop: '8px' }} color="secondary" variant="h6" component="div" display="flex" alignItems="center">
                     <MonetizationOnIcon style={{ margin: '8px' }} />
                     CryptoApp
                 </Typography>
                 <List>
-                    <ListItem onClick={onInicioClick}>
+                    <ListItemButton onClick={onInicioClick}>
                         <ListItemIcon> <HomeIcon style={{ color: 'white' }} /> </ListItemIcon>
                         <ListItemText primary="Inicio" />
-                    </ListItem>
-                    <ListItem onClick={onHistorialClick}>
+                    </ListItemButton>
+                    <ListItemButton onClick={onHistorialClick}>
                         <ListItemIcon> <HistoryIcon style={{ color: 'white' }} /> </ListItemIcon>
                         <ListItemText primary="Historial" />
-                    </ListItem>
-                    <ListItem onClick={onAlertasClick}>
+                    </ListItemButton>
+                    <ListItemButton onClick={onAlertasClick}>
                         <ListItemIcon> <WarningIcon style={{ color: 'white' }} /> </ListItemIcon>
                         <ListItemText primary="Alertas" />
-                    </ListItem>
-                    <ListItem onClick={onUsuariosClick}>
+                    </ListItemButton>
+                    <ListItemButton onClick={onUsuariosClick}>
                         <ListItemIcon> <ManageAccountsIcon style={{ color: 'white' }} /> </ListItemIcon>
                         <ListItemText primary="Usuario" />
-                    </ListItem>
-                    <ListItem onClick={onSalirClick}>
+                    </ListItemButton>
+                    <ListItemButton onClick={onSalirClick}>
                         <ListItemIcon> <LogoutIcon style={{ color: 'white' }} /> </ListItemIcon>
                         <ListItemText primary="Cerrar Sesion" />
-                    </ListItem>
+                    </ListItemButton>
                 </List>
             </nav>
         </Box>

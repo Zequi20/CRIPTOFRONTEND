@@ -1,5 +1,5 @@
 import { React, useEffect } from "react";
-import BottomAppBar from "../BottomAppBar";
+import BottomAppBar from "../navigation/BottomAppBar";
 import CustomPaper from "../CustomPaper";
 import { Divider, Typography } from "@mui/material";
 import UserCard from "../UserCard";
