@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { DataGrid } from '@mui/x-data-grid';
 import MonedaServicio from '../../servicios/moneda_servicio';
+import { Box } from '@mui/material';
 
 const columns = [
   { field: 'id', headerName: 'Simbolo' },
   { field: 'name', headerName: 'Nombre' },
-  { field: 'price', headerName: 'Precio (USD)', type: 'number' },
-  { field: 'volume', headerName: 'Volumen', type: 'number' },
-  { field: 'market_cap', headerName: 'Cap. Mercado', type: 'number' },
+  { field: 'price', headerName: 'Precio (USD)', type: 'number', width: 150 },
+  { field: 'volume', headerName: 'Volumen', type: 'number', width: 180 },
+  { field: 'market_cap', headerName: 'Cap. Mercado', type: 'number', width: 180},
 ];
 
 const CoinDataGrid = () => {
@@ -48,13 +49,13 @@ const CoinDataGrid = () => {
   };
 
   return (
-    <div style={{ height: 400, width: '100%' }}>
+    <Box style={{ height: 400, width: '100%' }}>
       {loading ? (
         <p>Cargando...</p>
       ) : (
         <DataGrid rows={rows} columns={columns} />
       )}
-    </div>
+    </Box>
   );
 };
 
