@@ -13,24 +13,13 @@ import InfoButton from '../modals/InfoButton';
 import AlertCheck from '../../utils/AlertCheck';
 
 function BottomAppBar() {
-
     const [drawerOpen, setDrawerOpen] = useState(false);
-
     const handleDrawerOpen = () => {
         setDrawerOpen(true);
     };
-
     const handleDrawerClose = () => {
         setDrawerOpen(false);
     };
-    const StyledFab = styled(Fab)({
-        position: 'absolute',
-        zIndex: 1,
-        top: -30,
-        left: 0,
-        right: 0,
-        margin: '0 auto',
-    });
     return (<>
         <AppBar position="fixed" color="primary" sx={{ top: 'auto', bottom: 0 }}>
             <AlertCheck></AlertCheck>
@@ -41,7 +30,6 @@ function BottomAppBar() {
                 <AlertModal>
                 <CenterFab/>
                 </AlertModal>
-
                 <Box sx={{ flexGrow: 1 }} />
                 <InfoButton/>
             </Toolbar>

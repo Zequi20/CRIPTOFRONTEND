@@ -9,7 +9,7 @@ const root = createRoot(document.getElementById('root'));
 
 root.render(
   <ThemeProvider theme={mainTheme}>
-    <SnackbarProvider maxSnack={3} autoHideDuration={5000} anchorOrigin={{
+    <SnackbarProvider maxSnack={3} autoHideDuration={3000} anchorOrigin={{
         vertical: 'top',
         horizontal: 'right',
       }}>
