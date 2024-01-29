@@ -17,6 +17,7 @@ function DrawerList() {
     const navegar = useNavigate();
     const onSalirClick = () => {
         navegar('/');
+        localStorage.removeItem("user");
     };
     const onInicioClick = () => {
         navegar('/tabla');

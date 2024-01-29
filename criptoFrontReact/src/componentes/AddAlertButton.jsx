@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { IconButton, Dialog, DialogTitle, DialogContent, DialogActions, Button, TextField } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
 import CustomSelect from './CustomSelect';
@@ -8,7 +8,9 @@ function AddAlertButton() {
     const alertaServicio = new AlertaServicio();
     const [openDialog, setOpenDialog] = useState(false);
     const [monto, setMonto] = useState(0);
-    const [moneda, setMoneda] = useState('');
+    const [moneda, setMoneda] = useState('BTC');
+    const [alertas, setAlertas] = useState([]);
+    const [alertasActualizadas, setAlertasActualizadas] = useState(false);
 
     const handleOpenDialog = () => {
         setOpenDialog(true);
@@ -30,6 +32,9 @@ function AddAlertButton() {
                     "moneda": moneda
                 });
                 console.log(response);
+
+                // Actualiza el estado para reflejar cambios en las alertas
+                setAlertasActualizadas(true);
             }
         } catch (error) {
             console.error("Error al agregar la alerta:", error.message);
@@ -45,6 +50,15 @@ function AddAlertButton() {
     const onMonedaChange = (value) => {
         setMoneda(value);
     };
+
+    useEffect(() => {
+        if (alertasActualizadas) {
+            alertaServicio.getAlertas().then((data) => {
+                setAlertas(data);
+                setAlertasActualizadas(false); // Resetea el estado después de la actualización
+            });
+        }
+    }, [alertasActualizadas]);
 
     return (
         <>

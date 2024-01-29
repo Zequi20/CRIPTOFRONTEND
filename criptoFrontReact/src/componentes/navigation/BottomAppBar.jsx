@@ -12,6 +12,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import CustomDrawer from "../CustomDrawer";
 import AlertModal from '../modals/AlertModal';
 import CenterFab from '../CenterFab';
+import InfoButton from '../modals/InfoButton';
 
 function BottomAppBar() {
 
@@ -43,12 +44,7 @@ function BottomAppBar() {
                 </AlertModal>
 
                 <Box sx={{ flexGrow: 1 }} />
-                <IconButton color="inherit">
-                    <InfoIcon />
-                </IconButton>
-                <IconButton color="inherit">
-                    <MoreIcon />
-                </IconButton>
+                <InfoButton/>
             </Toolbar>
         </AppBar>
         <CustomDrawer open={drawerOpen} onClose={handleDrawerClose} /></>
