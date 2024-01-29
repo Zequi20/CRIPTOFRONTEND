@@ -3,9 +3,6 @@ import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
-import AddIcon from '@mui/icons-material/Add';
-import InfoIcon from '@mui/icons-material/Info';
-import MoreIcon from '@mui/icons-material/MoreVert';
 import { styled } from '@mui/material/styles';
 import Fab from '@mui/material/Fab';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -13,6 +10,7 @@ import CustomDrawer from "../CustomDrawer";
 import AlertModal from '../modals/AlertModal';
 import CenterFab from '../CenterFab';
 import InfoButton from '../modals/InfoButton';
+import AlertCheck from '../../utils/AlertCheck';
 
 function BottomAppBar() {
 
@@ -35,6 +33,7 @@ function BottomAppBar() {
     });
     return (<>
         <AppBar position="fixed" color="primary" sx={{ top: 'auto', bottom: 0 }}>
+            <AlertCheck></AlertCheck>
             <Toolbar>
                 <IconButton edge="start" color="inherit" onClick={handleDrawerOpen}>
                     <MenuIcon />

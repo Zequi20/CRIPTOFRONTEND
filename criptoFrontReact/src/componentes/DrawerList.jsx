@@ -22,12 +22,7 @@ function DrawerList() {
     const onInicioClick = () => {
         navegar('/tabla');
     };
-    const onHistorialClick = () => {
-        navegar('/historial');
-    };
-    const onAlertasClick = () => {
-        navegar('/alertas');
-    };
+    
     const onUsuariosClick = () => {
         navegar('/usuarios');
     };
@@ -43,14 +38,6 @@ function DrawerList() {
                     <ListItemButton onClick={onInicioClick}>
                         <ListItemIcon> <HomeIcon style={{ color: 'white' }} /> </ListItemIcon>
                         <ListItemText primary="Inicio" />
-                    </ListItemButton>
-                    <ListItemButton onClick={onHistorialClick}>
-                        <ListItemIcon> <HistoryIcon style={{ color: 'white' }} /> </ListItemIcon>
-                        <ListItemText primary="Historial" />
-                    </ListItemButton>
-                    <ListItemButton onClick={onAlertasClick}>
-                        <ListItemIcon> <WarningIcon style={{ color: 'white' }} /> </ListItemIcon>
-                        <ListItemText primary="Alertas" />
                     </ListItemButton>
                     <ListItemButton onClick={onUsuariosClick}>
                         <ListItemIcon> <ManageAccountsIcon style={{ color: 'white' }} /> </ListItemIcon>

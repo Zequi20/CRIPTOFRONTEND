@@ -30,11 +30,9 @@ function AlertList() {
     };
 
     const handleMenuPress = () => {
-        // No cierra el menú aquí
         if (selectedAlertId !== null) {
             const delParam = { "id": selectedAlertId };
             alertaServicio.delAlerta(delParam).then(() => {
-                // Después de eliminar, actualiza el estado 'reload' para forzar una recarga
                 setReload(prev => !prev);
             });
         }
@@ -42,7 +40,6 @@ function AlertList() {
     };
 
     const handleMenuClose = () => {
-        // Cierra el menú solo cuando se hace clic en el ítem del menú
         setAnchorEl(null);
     };
 
@@ -51,12 +48,10 @@ function AlertList() {
     return (
         <List>
             {loading ? (
-                // Placeholder mientras se carga el contenido
                 <ListItem>
                     <ListItemText primary="Cargando alertas..." />
                 </ListItem>
             ) : (
-                // Renderizar la lista de alertas
                 alertas.map((alerta, index) => (
                     <React.Fragment key={index}>
                         <ListItemButton divider={true} onClick={(event) => handleMenuOpen(event, alerta.id)}>
@@ -65,13 +60,13 @@ function AlertList() {
                             </ListItemIcon>
                             <ListItemText
                                 primary={`${alerta.moneda} (${formatearFecha(alerta.fecha_hora)})`}
-                                secondary={`Monto a seguir: ${alerta.monto}`}
+                                secondary={`Monto a seguir: ${alerta.monto.toLocaleString()}`}
                             />
                         </ListItemButton>
                         <Popover
                             open={openMenu}
                             anchorEl={anchorEl}
-                            onClose={handleMenuClose} // Cierra el menú solo cuando se hace clic en el ítem del menú
+                            onClose={handleMenuClose} 
                             anchorOrigin={{
                                 vertical: 'top',
                                 horizontal: 'right',

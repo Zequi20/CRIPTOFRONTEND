@@ -26,7 +26,6 @@ const AlertModal = React.forwardRef(({ children }, ref) => {
     setOpen(false);
   };
 
-  // Exponer la función para abrir el modal usando useImperativeHandle
   useImperativeHandle(ref, () => ({
     openModal: handleClickOpen,
   }));
