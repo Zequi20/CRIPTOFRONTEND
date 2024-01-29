@@ -23,6 +23,7 @@ function SelectLineChart() {
           "name": element.name,
           "value": element.symbol
         }));
+        localStorage.setItem("coins", JSON.stringify(coinList));
         setListSimbolos(coinList);
         setSelectedCurrency(coinList[0].value); // Corrección aquí
       } catch (error) {
