@@ -10,7 +10,6 @@ import Slide from '@mui/material/Slide';
 import AlertList from '../AlertList';
 import AddAlertButton from '../AddAlertButton';
 
-
 const Transition = forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });

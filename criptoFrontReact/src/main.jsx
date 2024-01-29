@@ -4,6 +4,7 @@ import { createRoot } from 'react-dom/client';
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import mainTheme from './themes/mainTheme';
 import { SnackbarProvider } from 'notistack';
+import AlertCheck from './utils/AlertCheck';
 
 const root = createRoot(document.getElementById('root'));
 
@@ -15,6 +16,7 @@ root.render(
       }}>
       <CssBaseline />
       <App />
+      <AlertCheck></AlertCheck>
     </SnackbarProvider>
   </ThemeProvider>
 );

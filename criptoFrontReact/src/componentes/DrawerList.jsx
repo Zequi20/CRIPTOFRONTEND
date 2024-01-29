@@ -29,7 +29,6 @@ function DrawerList() {
     return (
         <Box style={{ backgroundColor: tema.palette.primary.main, color: 'white', width: 250, height: '100vh' }}>
             <nav>
-                
                 <Typography style={{ marginTop: '8px' }} color="secondary" variant="h6" component="div" display="flex" alignItems="center">
                     <MonetizationOnIcon style={{ margin: '8px' }} />
                     CryptoApp

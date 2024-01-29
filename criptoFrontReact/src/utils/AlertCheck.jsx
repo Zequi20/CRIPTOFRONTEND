@@ -8,7 +8,6 @@ function AlertCheck(){
     const {enqueueSnackbar} = useSnackbar();
     const servicioMoneda = new MonedaServicio();
     const alertaServicio = new AlertaServicio();
-
     const handleCheck = async () => {
         try {
             const topMonedas = await servicioMoneda.getTopMonedas();

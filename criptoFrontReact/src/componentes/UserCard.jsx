@@ -21,7 +21,6 @@ export default function UserCard() {
 
   useEffect(() => {
     const userData = JSON.parse(localStorage.getItem('user'));
-
     if (userData) {
       setUserName(userData.nombre);
       if(verClave){

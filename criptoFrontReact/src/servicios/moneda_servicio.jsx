@@ -8,10 +8,10 @@ class MonedaServicio {
   getTopMonedas = async () => {
     try {
       const response = await this.axios.get('http://127.0.0.1:5000/top_monedas');
-      return response.data; // Devuelve los datos en lugar de actualizar el estado directamente
+      return response.data;
     } catch (error) {
       console.error(error);
-      throw new Error('Error al obtener las mejores monedas'); // Lanza una nueva excepción
+      throw new Error('Error al obtener las mejores monedas');
     }
   };
   getHistorialPrecio = async (simbolo) => {

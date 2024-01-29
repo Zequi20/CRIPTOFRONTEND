@@ -11,14 +11,12 @@ export default function CustomSelect({ options, onSelectionChange }) {
     const handleChange = (event) => {
         const selectedValue = event.target.value;
         setCoin(selectedValue);
-        // Llamamos a la función de devolución de llamada con el valor seleccionado
         if (onSelectionChange) {
             onSelectionChange(selectedValue);
         }
     };
 
     useEffect(() => {
-        // Asignar el valor de la primera opción al estado cuando el componente se monta
         if (options.length > 0 && !coin) {
           setCoin(options[0].value);
         }
